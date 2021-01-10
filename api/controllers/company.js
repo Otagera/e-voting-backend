@@ -41,10 +41,17 @@ const createCompany = (req, res)=>{
 			            break;
 			        }
 			    }
+			    let socials = [
+			    	{ social: 'fb', link: body.fb },
+			    	{ social: 'twitter', link: body.twitter },
+			    	{ social: 'insta', link: body.insta },
+			    	{ social: 'website', link: body.website },
+			    ];
 				const company = new Company({
 					name: body.name,
 					description: body.description,
 			    	img: (file)? file.path: '',
+					socials: socials,
 		            fakeId: newID || companies.length + 1
 				});
 				company.save().then(result=>{
@@ -69,8 +76,16 @@ const updateCompany = (req, res)=>{
 			.then(company=>{
 				if(!company){ return res.statusJson(404, { message: 'Not found' }); }
 
+
+			    let socials = [
+			    	{ social: 'fb', link: body.fb },
+			    	{ social: 'twitter', link: body.twitter },
+			    	{ social: 'insta', link: body.insta },
+			    	{ social: 'website', link: body.website },
+			    ];
 				company.name = body.name;
 				company.dscription = body.description;
+				socials = socials;
 				company.img = (file)? file.path: company.img
 
 				company.save()

@@ -5,6 +5,9 @@ const DEFAULT_DATA = require('../models/DEFAULT_DATA');
 
 const addOneContestant = (req, res)=>{
 	const { body, params, file } = req;
+	if(!body.name){
+		return res.statusJson(400, { message: 'Please check and make sure the companies name is not empty'});
+	}
 	Contestant.find()
 				.exec()
 				.then(contestants=>{
@@ -21,10 +24,17 @@ const addOneContestant = (req, res)=>{
 						.then(category=>{
 							if(!category){ return res.statusJson(404, { message: 'Not found' }); }
 
+						    let socials = [
+						    	{ social: 'fb', link: body.fb },
+						    	{ social: 'twitter', link: body.twitter },
+						    	{ social: 'insta', link: body.insta },
+						    	{ social: 'website', link: body.website },
+						    ];
 							const contest = new Contestant({
 								name: body.name,
 								quote: body.quote,
 								img: (file)? file.path: '',
+								socials: socials,
 								fakeId: newID || contestants.length + 1
 							});
 
@@ -129,11 +139,26 @@ const getContestants = (req, res)=>{
 				});
 }
 const updateContestant = (req, res)=>{
-	Contestant.findOne()
+	const { body, params, file } = req;
+	if(!body.name){
+		return res.statusJson(400, { message: 'Please check and make sure the companies name is not empty'});
+	}
+	Contestant.findOne({ fakeId: params.contestantId })
 				.exec()
 				.then(contest=>{
 					if(!contest){ return res.statusJson(404, { message: 'Not found' }); }
 
+					let socials = [
+				    	{ social: 'fb', link: body.fb },
+				    	{ social: 'twitter', link: body.twitter },
+				    	{ social: 'insta', link: body.insta },
+				    	{ social: 'website', link: body.website },
+				    ];
+					contest.name = body.name;
+					contest.quote = body.quote;
+					contest.socials = socials;
+					contest.img = (file)? file.path: contest.img;
+					
 					contest.save().then(updated=>{
 						if(!updated){ return res.statusJson(404); }
 

@@ -58,7 +58,7 @@ const getCompetition = (req, res)=>{
 				})
 				.catch(err=>{
 					console.log(err);
-					return res.status.Json(500, { error: err });
+					return res.statusJson(500, { error: err });
 				});
 }
 const getCompetitions = (req, res)=>{
@@ -73,7 +73,7 @@ const getCompetitions = (req, res)=>{
 				})
 				.catch(err=>{
 					console.log(err);
-					return res.status.Json(500, { error: err });
+					return res.statusJson(500, { error: err });
 				});
 }
 const getCompetitionsByCompany = (req, res)=>{
@@ -92,7 +92,7 @@ const getCompetitionsByCompany = (req, res)=>{
 				})
 				.catch(err=>{
 					console.log(err);
-					return res.status.Json(500, { error: err });
+					return res.statusJson(500, { error: err });
 				});
 }
 const updateCompetition = (req, res)=>{

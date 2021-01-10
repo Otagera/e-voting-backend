@@ -7,6 +7,10 @@ const companySchema = Schema({
 	name: 			{ type: String, required: true, unique: true },
 	description: 	{ type: String, required: true },
 	img: 			{ type: String },
+	socials: 		[{
+						social: { type: String },
+						link: { type: String }
+					}],
 	fakeId: 		{ type: Number }
 });
 

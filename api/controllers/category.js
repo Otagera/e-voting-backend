@@ -168,9 +168,10 @@ const vote = (req, res)=>{
 					let currentWinner = null;
 					category.contestants.forEach((contest)=>{
 						if(+contest.contestant.fakeId === +params.contestantId){
-							contest.vote += 1;
+							contest.contestantVotes += 1;
 						}
 					});
+					category.totalVotes += 1;
 
 					category.save()
 								.then(updated=>{
@@ -235,10 +236,11 @@ const reset = (req, res)=>{
 							tempCategory.name = tempCategory.name + ' ' + fakeId;
 							tempCategory.fakeId = fakeId++;
 							tempCategory.competition = competition;
+							tempCategory.totalVotes = 0;
 							for(let j = 0; j < tempCategory.contestants.length; j++){
 								tempCategory.contestants[j].contestant = superContestants[j];
+								tempCategory.totalVotes += tempCategory.contestants[j].contestantVotes;
 							}
-
 							tempCategories[i] = { ...tempCategory };
 						}
 						Category.insertMany(tempCategories, (err, categories)=>{

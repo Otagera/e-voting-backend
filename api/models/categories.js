@@ -10,8 +10,10 @@ const categorySchema = Schema({
 	competition:  { type: Schema.Types.ObjectId, ref: 'Competition' },
 	contestants: [{
 					contestant: { type: Schema.Types.ObjectId, ref: 'Contestant' },
-					vote: { type: Number, default: 0 }
+					contestantVotes: { type: Number, default: 0 },
+					voters: [{ type: Schema.Types.ObjectId, ref: 'User' }]
 				  }],
+	totalVotes:   { type: Number, default: 0 },
 	fakeId:		  { type: Number }
 });
 

@@ -5,10 +5,11 @@ let JWT_KEY = 'secret';
 module.exports = (req, res, next)=>{
 	try {
 		let token = req.headers['x-access-token'] || req.headers.authorization;
-		if(token.startsWith('Bearer ')){
+		if(token && token.startsWith('Bearer ')){
 			token = token.split(' ')[1];
 		}
 		const decoded = jwt.verify(token, JWT_KEY);
+		//console.log(decoded);
 		req.decoded = decoded;
 		next();
 	} catch(e) {

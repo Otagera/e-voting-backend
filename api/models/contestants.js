@@ -7,6 +7,10 @@ const contestantSchema = Schema({
 	name:   { type: String, required: true, unique: true },
 	quote:  { type: String },
 	img:    { type: String },
+	socials:[{
+				social: { type: String },
+				link: { type: String }
+			}],
 	fakeId: { type: Number }
 });
 

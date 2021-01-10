@@ -3,48 +3,96 @@ const companies = [
 		name: 'My Home',
 		img: 'myHomeImg',
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, ullam! Nesciunt illum minima illo velit harum, in! Corrupti autem officiis, beatae ipsa minima sequi ab at, ducimus consequuntur incidunt deleniti?',
-		socials: {
-        fb: 'MyHome',
-				twitter: 'MyHome',
-				insta: 'MyHome',
-				website: 'https://www.myhome.com'
-    },
+		socials: [
+      {
+        social: 'fb',
+        link: 'https://www.facebook.com/MyHome'
+      },
+      {
+  			social: 'twitter',
+        link: 'https://www.twitter.com/MyHome'
+      },
+			{
+        social: 'insta',
+        link: 'https://www.instagram.com/MyHome'
+      },
+			{
+        social: 'website',
+        link: 'https://www.myhome.com'
+      }
+    ],
     fakeId: 1
   },
   {
     name: 'Insure',
     img: 'insureImg',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, ullam! Nesciunt illum minima illo velit harum, in! Corrupti autem officiis, beatae ipsa minima sequi ab at, ducimus consequuntur incidunt deleniti?',
-    socials: {
-      fb: 'https://www.facebook.com/Insure',
-      twitter: 'https://www.twitter.com/Insure',
-      insta: 'https://www.instagram.com/Insure',
-      website: 'https://www.insure.com'
-    },
+    socials: [
+      {
+        social: 'fb',
+        link: 'https://www.facebook.com/Insure'
+      },
+      {
+        social: 'twitter',
+        link: 'https://www.twitter.com/Insure'
+      },
+      {
+        social: 'insta',
+        link: 'https://www.instagram.com/Insure'
+      },
+      {
+        social: 'website',
+        link: 'https://www.insure.com'
+      }
+    ],
     fakeId: 2
   },
   {
     name: 'Manage',
     img: 'manageImg',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, ullam! Nesciunt illum minima illo velit harum, in! Corrupti autem officiis, beatae ipsa minima sequi ab at, ducimus consequuntur incidunt deleniti?',
-    socials: {
-      fb: 'https://www.facebook.com/manage',
-      twitter: 'https://www.twitter.com/manage',
-      insta: 'https://www.instagram.com/manage',
-      website: 'https://www.manage.com'
-    },
+    socials: [
+      {
+        social: 'fb',
+        link: 'https://www.facebook.com/manage'
+      },
+      {
+        social: 'twitter',
+        link: 'https://www.twitter.com/manage'
+      },
+      {
+        social: 'insta',
+        link: 'https://www.instagram.com/manage'
+      },
+      {
+        social: 'website',
+        link: 'https://www.manage.com'
+      }
+    ],
     fakeId: 3
   },
   {
     name: 'FaceIt',
     img: 'faceItImg',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, ullam! Nesciunt illum minima illo velit harum, in! Corrupti autem officiis, beatae ipsa minima sequi ab at, ducimus consequuntur incidunt deleniti?',
-    socials: {
-      fb: 'https://www.facebook.com/faceit',
-      twitter: 'https://www.twitter.com/faceit',
-      insta: 'https://www.instagram.com/faceit',
-      website: 'https://www.faceit.com'
-    },
+    socials: [
+      {
+        social: 'fb',
+        link: 'https://www.facebook.com/faceit'
+      },
+      {
+        social: 'twitter',
+        link: 'https://www.twitter.com/faceit'
+      },
+      {
+        social: 'insta',
+        link: 'https://www.instagram.com/faceit'
+      },
+      {
+        social: 'website',
+        link: 'https://www.faceit.com'
+      }
+    ],
     fakeId: 4
   }
 ];
@@ -102,55 +150,100 @@ const contestants = [
     img: 'ageraImg',
     quote: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis illum amet id, consequatur aliquid eligendi nihil excepturi qui praesentium molestiae quisquam assumenda rerum eaque officiis sunt hic quod ipsa fugit!',
     fakeId: 1,
-    socials: {
-      fb: 'https://www.facebook.com/agera',
-      twitter: 'https://www.twitter.com/agera',
-      insta: 'https://www.instagram.com/agera'
-    }
+    socials: [
+      {
+        social: 'fb',
+        link: 'https://www.facebook.com/agera'
+      },
+      {
+        social: 'twitter',
+        link: 'https://www.twitter.com/agera'
+      },
+      {
+        social: 'insta',
+        link: 'https://www.instagram.com/agera'
+      }
+    ]
   },
   {
     name: 'MI',
     img: 'miImg',
     quote: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis illum amet id, consequatur aliquid eligendi nihil excepturi qui praesentium molestiae quisquam assumenda rerum eaque officiis sunt hic quod ipsa fugit!',
     fakeId: 2,
-    socials: {
-      fb: 'https://www.facebook.com/mi',
-      twitter: 'https://www.twitter.com/mi',
-      insta: 'https://www.instagram.com/mi'
-    }
+    socials: [
+      {
+        social: 'fb',
+        link: 'https://www.facebook.com/mi'
+      },
+      {
+        social: 'twitter',
+        link: 'https://www.twitter.com/mi'
+      },
+      {
+        social: 'insta',
+        link: 'https://www.instagram.com/mi'
+      }
+    ]
   },
   {
     name: 'Baby',
     img: 'babyImg',
     quote: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis illum amet id, consequatur aliquid eligendi nihil excepturi qui praesentium molestiae quisquam assumenda rerum eaque officiis sunt hic quod ipsa fugit!',
     fakeId: 3,
-    socials: {
-      fb: 'https://www.facebook.com/baby',
-      twitter: 'https://www.twitter.com/baby',
-      insta: 'https://www.instagram.com/baby'
-    }
+    socials: [
+      {
+        social: 'fb',
+        link: 'https://www.facebook.com/baby'
+      },
+      {
+        social: 'twitter',
+        link: 'https://www.twitter.com/baby'
+      },
+      {
+        social: 'insta',
+        link: 'https://www.instagram.com/baby'
+      }
+    ]
   },
   {
     name: 'Ye',
     img: 'yeImg',
     quote: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis illum amet id, consequatur aliquid eligendi nihil excepturi qui praesentium molestiae quisquam assumenda rerum eaque officiis sunt hic quod ipsa fugit!',
     fakeId: 4,
-    socials: {
-      fb: 'https://www.facebook.com/ye',
-      twitter: 'https://www.twitter.com/ye',
-      insta: 'https://www.instagram.com/ye'
-    }
+    socials: [
+      {
+        social: 'fb',
+        link: 'https://www.facebook.com/ye'
+      },
+      {
+        social: 'twitter',
+        link: 'https://www.twitter.com/ye'
+      },
+      {
+        social: 'insta',
+        link: 'https://www.instagram.com/ye'
+      }
+    ]
   },
   {
     name: 'Ali the Great',
     img: 'aliImg',
     quote: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis illum amet id, consequatur aliquid eligendi nihil excepturi qui praesentium molestiae quisquam assumenda rerum eaque officiis sunt hic quod ipsa fugit!',
     fakeId: 5,
-    socials: {
-      fb: 'https://www.facebook.com/ali_the_great',
-      twitter: 'https://www.twitter.com/ali_the_great',
-      insta: 'https://www.instagram.com/ali_the_great'
-    }
+    socials: [
+      {
+        social: 'fb',
+        link: 'https://www.facebook.com/ali_d_great'
+      },
+      {
+        social: 'twitter',
+        link: 'https://www.twitter.com/ali_d_great'
+      },
+      {
+        social: 'insta',
+        link: 'https://www.instagram.com/ali_d_great'
+      }
+    ]
   }
 ];
 
@@ -175,7 +268,7 @@ for(let i = 0; i < categories.length; i++){
   for (let i = 0; i < tempContestants.length; i++){
     tempContestantsWithVotes.push(
       {
-        vote: votes.splice(Math.floor(Math.random()*votes.length), 1)[0]
+        contestantVotes: votes.splice(Math.floor(Math.random()*votes.length), 1)[0]
       }
     );
   }
